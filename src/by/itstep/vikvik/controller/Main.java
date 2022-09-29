@@ -5,18 +5,25 @@ import by.itstep.vikvik.view.Printer;
 
 import java.util.Scanner;
 
+class Student {
+
+}
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Input student's marks: ");
-        int mark1 = scanner.nextInt();
-        int mark2 = scanner.nextInt();
-        int mark3 = scanner.nextInt();
-        int mark4 = scanner.nextInt();
-        int mark5 = scanner.nextInt();
+        System.out.print("Input count of students: ");
+        int count = scanner.nextInt();
 
-        double avg = StudentManager.calcAvgStudentMark(mark1, mark2, mark3, mark4, mark5 );
+        int[] marks = new int[count];
+
+        System.out.print("Input student's marks: ");
+
+        for (int i = 0; i < marks.length; i++) {
+            marks[i] = scanner.nextInt();
+        }
+
+        double avg = StudentManager.calcAvgStudentMark(marks);
 
         String msg = String.format("Student's average mark is %.2f", avg);
 
